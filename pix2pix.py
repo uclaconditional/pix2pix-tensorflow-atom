@@ -349,6 +349,7 @@ def create_generator(generator_inputs, generator_outputs_channels):
             output = batchnorm(convolved)
             layers.append(output)
 
+    # MEEE seed = layers[-1] (save to be returned later)
     layer_specs = [
         (a.ngf * 8, 0.5),   # decoder_8: [batch, 1, 1, ngf * 8] => [batch, 2, 2, ngf * 8 * 2]
         (a.ngf * 8, 0.5),   # decoder_7: [batch, 2, 2, ngf * 8 * 2] => [batch, 4, 4, ngf * 8 * 2]
